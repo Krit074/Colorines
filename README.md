@@ -10,9 +10,9 @@ Solo tienes que descargar el archivo Colorines.exe de esta carpeta y voilá! ten
 
 # TECnología usada
 
-Este proyecto usa varias cosas:
--Angular 7
--Bootstrap
+Este proyecto usa varias cosas: <br>
+-Angular 7 <br>
+-Bootstrap <br>
 -Api: https://reqres.in/api/colors
 
 # 
