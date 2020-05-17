@@ -1,1 +1,29 @@
-<router-outlet></router-outlet>
+<div class="principalDiv container">
+    <div class="alert alert-success align-self-center justify-content-center" *ngIf="mostrarMensaje" (close)="!mostrarMensaje">{{ mensaje }}</div>
+    <div class="d-flex p-12 titulo justify-content-center align-items-center">
+        Colorines
+    </div>
+    <div class="d-flex p-12 colores justify-content-center align-items-center" *ngIf="pensando">
+        <img src="./assets/img/loading.gif" width="20%">
+    </div>
+    <div class="d-flex p-12 colores justify-content-center align-items-center" *ngIf="!pensando && !hayMas">
+        <p style="color: #BF1932;">No hay m&aacute;s colorines.</p>
+    </div>
+    <div class="d-flex colores row justify-content-center" *ngIf="!pensando && hayMas">
+        <div class="color" id="color" [ngStyle]="{'background-color': color.color }" *ngFor="let color of colores; let i = index"
+            (contextmenu)="copiarDatos('', i)" (click)="copiarDatos('color', i)">
+            <div class="w-100 h-25" style="font-size: 12px;">{{color.year}}</div>
+            <div class="w-100 h-25 text-uppercase text-center align-text-bottom">{{color.name}}</div>
+            <div class="w-100 h-25 text-center">{{color.color}}</div>
+            <div class="w-100 h-25 text-right" style="font-size: 12px;">{{color.pantone_value}}</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around align-items-center pies">
+        <div class="p-2" (click)="cambiarPagina('-')" *ngIf="hayMenos">
+            Anterior
+        </div>
+        <div class="p-2" style="text-align: right;" (click)="cambiarPagina('+')" *ngIf="hayMas">
+            Siguiente
+        </div>
+    </div>
+</div>
