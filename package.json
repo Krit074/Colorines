@@ -39,7 +39,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
-    "electron": "^8.3.0",
     "grunt": "^1.0.4",
     "grunt-war": "^0.5.1",
     "jasmine-core": "~2.99.1",
